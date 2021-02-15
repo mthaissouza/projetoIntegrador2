@@ -36,7 +36,7 @@ public class MainViewController implements Initializable{
 	//metodos para tratar os itens de menu
 	@FXML
 	public void onMenuItemClienteAction() {
-		System.out.println("onMenuItemClienteAction");
+		loadView("/gui/ClienteList.fxml");
 	}
 	
 	@FXML
