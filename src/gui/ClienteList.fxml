@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox prefHeight="396.0" prefWidth="582.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<VBox prefHeight="396.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ClienteListController">
    <children>
       <Label prefHeight="26.0" prefWidth="115.0" text="Registrar Clientes">
          <font>
@@ -22,13 +21,13 @@
       </Label>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
-          <Button mnemonicParsing="false" text="Registrar-se" />
+          <Button fx:id="btRegistrar" mnemonicParsing="false" onAction="#onBtNewAction" text="Registrar-se" />
         </items>
       </ToolBar>
-      <TableView prefHeight="294.0" prefWidth="582.0">
+      <TableView fx:id="tableViewCliente" prefHeight="294.0" prefWidth="582.0">
         <columns>
-          <TableColumn prefWidth="110.39999085664749" text="Nome" />
-          <TableColumn prefWidth="152.8000030517578" text="Email" />
+          <TableColumn fx:id="tableColumnNome" prefWidth="110.39999085664749" text="Nome" />
+          <TableColumn fx:id="tableColumnEmail" prefWidth="152.8000030517578" text="Email" />
         </columns>
       </TableView>
    </children>
