@@ -3,6 +3,7 @@ package gui;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
 
 import application.Main;
 import gui.util.Alerts;
@@ -37,7 +38,10 @@ public class MainViewController implements Initializable{
 	//metodos para tratar os itens de menu
 	@FXML
 	public void onMenuItemClienteAction() {
-		loadView2("/gui/ClienteList.fxml");
+		loadView("/gui/ClienteList.fxml", (ClienteListController controller) -> {
+			controller.setClienteService(new ClienteService());
+			controller.updateTableView();
+		});
 	}
 	
 	@FXML
@@ -57,14 +61,14 @@ public class MainViewController implements Initializable{
 	
 	@FXML
 	public void onMenuItemSobreAction() {
-		loadView("/gui/Sobre.fxml");
+		loadView("/gui/Sobre.fxml", x -> {} );
 	}
 	
 	@Override
 	public void initialize(URL uri, ResourceBundle rb) {
 	}
 	
-	private void loadView(String absoluteName) {
+	private synchronized <T> void loadView(String absoluteName, Consumer<T> initializingAction) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			VBox newVBox = loader.load();
@@ -83,39 +87,13 @@ public class MainViewController implements Initializable{
 			
 			mainVBox.getChildren().add(mainMenu);
 			mainVBox.getChildren().addAll(newVBox.getChildren());
+			
+			//executa a função passada como parâmentro
+			T controller = loader.getController();
+			initializingAction.accept(controller);
 			
 		} catch (IOException e) {
 			Alerts.showAlert("IO Exceptiom", "Erro decarregamento", e.getMessage(), AlertType.ERROR);
 		}
 	}	
-	
-	private void loadView2(String absoluteName) {
-		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
-			VBox newVBox = loader.load();
-			
-			//pega a referencia da cena principal
-			Scene mainScene = Main.getMainScene();
-			
-			//pega referencia para o VBox da tela principal
-			VBox mainVBox = (VBox) ((ScrollPane) mainScene.getRoot()).getContent();
-			
-			//referencia para o menu
-			Node mainMenu = mainVBox.getChildren().get(0);
-			
-			//limpa todos os filhos do VBox
-			mainVBox.getChildren().clear();
-			
-			mainVBox.getChildren().add(mainMenu);
-			mainVBox.getChildren().addAll(newVBox.getChildren());
-			
-			ClienteListController controller = loader.getController();
-			controller.setClienteService(new ClienteService());
-			controller.updateTableView();
-			
-		} catch (IOException e) {
-			Alerts.showAlert("IO Exceptiom", "Erro decarregamento", e.getMessage(), AlertType.ERROR);
-		}
-	}
-
 }
