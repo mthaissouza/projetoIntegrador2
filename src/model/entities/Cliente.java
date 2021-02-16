@@ -11,18 +11,15 @@ public class Cliente implements Serializable{
 	// Atributos
 	private String nome;
 	private String email;
-	private String senha;
-	private Login login;
 	
 	//Construtores
 	public Cliente() {
 	}
 	
-	public Cliente(String nome, String email, String senha) {
+	public Cliente(String nome, String email) {
 		super();
 		this.nome = nome;
 		this.email = email;
-		this.senha = senha;
 	}
 	
 	
@@ -43,18 +40,10 @@ public class Cliente implements Serializable{
 		this.email = email;
 	}
 
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
 	//toString
 	@Override
 	public String toString() {
-		return "Cliente [nome=" + nome + ", email=" + email + ", senha=" + senha + "]";
+		return "Cliente [nome=" + nome + ", email=" + email + "]";
 	}
 	
 	@Override
@@ -85,7 +74,6 @@ public class Cliente implements Serializable{
 	public void alterarDados(String nome, String email, String senha) {
 		this.email = email;
 		this.nome = nome;
-		this.senha = senha;
 	}
 	
 	public void excluirConta() {
