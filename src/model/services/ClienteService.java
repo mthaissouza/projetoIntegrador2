@@ -1,18 +1,17 @@
 package model.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import model.dao.ClienteDao;
+import model.dao.DaoFactory;
 import model.entities.Cliente;
 
 public class ClienteService {
 	
+	private ClienteDao dao = DaoFactory.createClienteDao();
+	
 	public List<Cliente> findAll(){
-		List<Cliente> list = new ArrayList<>();
-		list.add(new Cliente("Ana", "ana@gmail.com"));
-		list.add(new Cliente("João", "joao@gmail.com"));
-		list.add(new Cliente("Nina", "nina@gmail.com"));
-		return list;
+		return dao.findAll();
 	}
 	
 }

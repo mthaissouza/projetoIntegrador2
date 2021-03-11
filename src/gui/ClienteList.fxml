@@ -11,7 +11,7 @@
 
 <VBox prefHeight="396.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ClienteListController">
    <children>
-      <Label prefHeight="26.0" prefWidth="115.0" text="Registrar Clientes">
+      <Label prefHeight="26.0" prefWidth="115.0" text="Registrador">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
@@ -26,8 +26,8 @@
       </ToolBar>
       <TableView fx:id="tableViewCliente" prefHeight="294.0" prefWidth="582.0">
         <columns>
+            <TableColumn fx:id="tableColumnId" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="tableColumnNome" prefWidth="110.39999085664749" text="Nome" />
-          <TableColumn fx:id="tableColumnEmail" prefWidth="152.8000030517578" text="Email" />
         </columns>
       </TableView>
    </children>
