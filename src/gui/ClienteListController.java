@@ -50,7 +50,8 @@ public class ClienteListController implements Initializable{
 	@FXML
 	public void onBtNewAction(ActionEvent event) {
 		Stage parentStage = Utils.currentStage(event);
-		createClienteForm("/gui/ClienteForm.fxml", parentStage);
+		Cliente obj = new Cliente();
+		createClienteForm(obj, "/gui/ClienteForm.fxml", parentStage);
 	}
 	
 	//injeção da dependência
@@ -88,11 +89,15 @@ public class ClienteListController implements Initializable{
 	}
 	
 	//carrega a tela para cadastrar um novo cliente
-	private void createClienteForm(String absoluteName, Stage parentStage) {
+	private void createClienteForm(Cliente obj, String absoluteName, Stage parentStage) {
 		try {
 			
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			Pane pane = loader.load();
+			
+			ClienteFormController controller = loader.getController();
+			controller.setCliente(obj);
+			controller.updateFormData();
 			
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Insira o nome do Cliente:");
