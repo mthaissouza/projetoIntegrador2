@@ -24,4 +24,9 @@ public class ClienteService {
 		}
 	}
 	
+	//remove um cliente
+	public void remove(Cliente obj) {
+		dao.deleteById(obj.getId());
+	}
+	
 }
