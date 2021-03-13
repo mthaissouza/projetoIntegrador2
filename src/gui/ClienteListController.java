@@ -5,8 +5,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-
 import application.Main;
+import gui.listeners.DataChangeListener;
 import gui.util.Alerts;
 import gui.util.Utils;
 import javafx.collections.FXCollections;
@@ -27,7 +27,7 @@ import javafx.stage.Stage;
 import model.entities.Cliente;
 import model.services.ClienteService;
 
-public class ClienteListController implements Initializable{
+public class ClienteListController implements Initializable, DataChangeListener{
 	
 	//declaração de dependencia da classe 'ClienteService'
 	private ClienteService service; 
@@ -95,9 +95,13 @@ public class ClienteListController implements Initializable{
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			Pane pane = loader.load();
 			
+			//injeção de dependências
 			ClienteFormController controller = loader.getController();
 			controller.setCliente(obj);
 			controller.setClienteService(new ClienteService());
+			
+			controller.subscribeDataChangeListener(this);
+			
 			controller.updateFormData();
 			
 			Stage dialogStage = new Stage();
@@ -112,6 +116,11 @@ public class ClienteListController implements Initializable{
 		catch(IOException e) {
 			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
 		}
+	}
+
+	@Override
+	public void onDataChanged() {
+		updateTableView();
 	}
 	
 }

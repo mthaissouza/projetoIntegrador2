@@ -1,9 +1,12 @@
 package gui;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import db.DbException;
+import gui.listeners.DataChangeListener;
 import gui.util.Alerts;
 import gui.util.Constraints;
 import gui.util.Utils;
@@ -22,6 +25,8 @@ public class ClienteFormController implements Initializable{
 	private Cliente entity;
 	
 	private ClienteService service;
+	
+	private List<DataChangeListener> dataChangeListeners = new ArrayList<>();
 	
 	@FXML
 	private TextField txtId;
@@ -46,9 +51,13 @@ public class ClienteFormController implements Initializable{
 		this.service = service;
 	}
 	
+	public void subscribeDataChangeListener(DataChangeListener listener) {
+		dataChangeListeners.add(listener);
+	}
+	
 	@FXML
 	public void onBtSalvarAction(ActionEvent event) {
-		//verificando as injeções de dependência
+		// verificando as injeções de dependência
 		if (entity == null) {
 			throw new IllegalStateException("Entity was null");
 		}
@@ -57,8 +66,11 @@ public class ClienteFormController implements Initializable{
 		}
 		try {
 			entity = getFormData();
-			//salva no bd
+			// salva no bd
 			service.saveOrUpdate(entity);
+			
+			notifyDataChangeListeners();
+			
 			//fecha a tela após a inserção
 			Utils.currentStage(event).close();
 		}
@@ -67,6 +79,12 @@ public class ClienteFormController implements Initializable{
 		}
 	}
 	
+	private void notifyDataChangeListeners() {
+		for(DataChangeListener listener : dataChangeListeners) {
+			listener.onDataChanged();
+		}
+	}
+
 	//pega os dados inseridos no formulário e retorna
 	private Cliente getFormData() {
 		Cliente obj = new Cliente();
