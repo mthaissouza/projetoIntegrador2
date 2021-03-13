@@ -3,7 +3,9 @@ package gui;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 import db.DbException;
 import gui.listeners.DataChangeListener;
@@ -18,6 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import model.entities.Cliente;
+import model.exceptions.ValidationException;
 import model.services.ClienteService;
 
 public class ClienteFormController implements Initializable{
@@ -35,7 +38,7 @@ public class ClienteFormController implements Initializable{
 	private TextField txtNome;
 	
 	@FXML
-	private Label errorNome;
+	private Label labelErrorNome;
 	
 	@FXML
 	private Button btSalvar;
@@ -74,6 +77,9 @@ public class ClienteFormController implements Initializable{
 			//fecha a tela após a inserção
 			Utils.currentStage(event).close();
 		}
+		catch(ValidationException e) {
+			setErrorMessages(e.getErrors());
+		}
 		catch (DbException e) {
 			Alerts.showAlert("Error saving objetc", null, e.getMessage(), AlertType.ERROR);
 		}
@@ -89,8 +95,20 @@ public class ClienteFormController implements Initializable{
 	private Cliente getFormData() {
 		Cliente obj = new Cliente();
 		
-		obj.setId(gui.util.Utils.tryParseToInt(txtId.getText()));
+		ValidationException exception = new ValidationException("Validation error");
+		
+		obj.setId(Utils.tryParseToInt(txtId.getText()));
+		
+		//verifica se o campo nome é nulo
+		if(txtNome.getText() == null || txtNome.getText().trim().equals("")) {
+			exception.addError("nome", "O campo não pode ser vazio!");
+		}
 		obj.setNome(txtNome.getText());
+		
+		//verifica se tem algum erro na coleção
+		if(exception.getErrors().size() > 0) {
+			throw exception;
+		}
 		
 		return obj;
 	}
@@ -117,4 +135,12 @@ public class ClienteFormController implements Initializable{
 		txtNome.setText(entity.getNome());
 	}
 
+	private void setErrorMessages(Map<String, String> errors) {
+		Set<String> fields = errors.keySet();
+		
+		if(fields.contains("nome")) {
+			labelErrorNome.setText(errors.get("nome"));
+		}
+	}
+	
 }
