@@ -143,7 +143,7 @@ public class FuncionarioDaoJDBC implements FuncionarioDao {
 		obj.setNome(rs.getString("Nome"));
 		obj.setEmail(rs.getString("Email"));
 		obj.setSalarioBase(rs.getDouble("SalarioBase"));
-		obj.setDataAniversario(rs.getDate("DataAniversário"));
+		obj.setDataAniversario(new java.util.Date(rs.getTimestamp("DataAniversario").getTime()));
 		obj.setCliente(dep);
 		return obj;
 	}
@@ -151,7 +151,7 @@ public class FuncionarioDaoJDBC implements FuncionarioDao {
 	private Cliente instantiateCliente(ResultSet rs) throws SQLException {
 		Cliente dep = new Cliente();
 		dep.setId(rs.getInt("ClienteId"));
-		dep.setNome(rs.getString("ClienteNome"));
+		dep.setNome(rs.getString("DepNome"));
 		return dep;
 	}
 

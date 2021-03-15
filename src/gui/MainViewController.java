@@ -17,6 +17,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 import model.services.ClienteService;
+import model.services.FuncionarioService;
 
 public class MainViewController implements Initializable{
 	//Atributos para os itens de menu
@@ -46,7 +47,10 @@ public class MainViewController implements Initializable{
 	
 	@FXML
 	public void onMenuItemFuncionarioAction() {
-		System.out.println("onMenuItemFuncionarioAction");
+		loadView("/gui/FuncionarioList.fxml", (FuncionarioListController controller) -> {
+			controller.setFuncionarioService(new FuncionarioService());
+			controller.updateTableView();
+		});
 	}
 	
 	@FXML
