@@ -78,8 +78,8 @@ public class ClienteListController implements Initializable, DataChangeListener{
 	
 	//inicializa os componentes da tabela
 	private void initializeNodes() {
-		tableColumnId.setCellValueFactory(new PropertyValueFactory<>("Id"));
-		tableColumnNome.setCellValueFactory(new PropertyValueFactory<>("Nome"));
+		tableColumnId.setCellValueFactory(new PropertyValueFactory<>("id"));
+		tableColumnNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		
 		//faz com que a os elementos da tela se ajustem ao tamanho da janela
 		Stage stage = (Stage) Main.getMainScene().getWindow();

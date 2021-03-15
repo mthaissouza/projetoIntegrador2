@@ -1,6 +1,7 @@
 package gui;
 
 import java.net.URL;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -43,6 +44,15 @@ public class FuncionarioListController implements Initializable, DataChangeListe
 	private TableColumn<Funcionario, String> tableColumnNome;
 	
 	@FXML
+	private TableColumn<Funcionario, String> tableColumnEmail;
+	
+	@FXML
+	private TableColumn<Funcionario, Date> tableColumnDataAniversario;
+	
+	@FXML
+	private TableColumn<Funcionario, Double> tableColumnSalarioBase;
+	
+	@FXML
 	private TableColumn<Funcionario, Funcionario> tableColumnEDIT;
 	
 	@FXML
@@ -73,8 +83,13 @@ public class FuncionarioListController implements Initializable, DataChangeListe
 	
 	//inicializa os componentes da tabela
 	private void initializeNodes() {
-		tableColumnId.setCellValueFactory(new PropertyValueFactory<>("Id"));
-		tableColumnNome.setCellValueFactory(new PropertyValueFactory<>("Nome"));
+		tableColumnId.setCellValueFactory(new PropertyValueFactory<>("id"));
+		tableColumnNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		tableColumnEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+		tableColumnDataAniversario.setCellValueFactory(new PropertyValueFactory<>("dataAniversario"));
+		Utils.formatTableColumnDate(tableColumnDataAniversario, "dd/MM/yyyy");
+		tableColumnSalarioBase.setCellValueFactory(new PropertyValueFactory<>("salarioBase"));
+		Utils.formatTableColumnDouble(tableColumnSalarioBase, 2);
 		
 		//faz com que a os elementos da tela se ajustem ao tamanho da janela
 		Stage stage = (Stage) Main.getMainScene().getWindow();

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="396.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FuncionarioListController">
+<VBox prefHeight="426.0" prefWidth="706.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FuncionarioListController">
    <children>
       <Label prefHeight="26.0" prefWidth="184.0" text="Registrar Novos Funcionarios">
          <font>
@@ -26,10 +26,13 @@
       </ToolBar>
       <TableView fx:id="tableViewFuncionario" prefHeight="294.0" prefWidth="582.0">
         <columns>
-            <TableColumn fx:id="tableColumnId" prefWidth="75.0" text="Id" />
-          <TableColumn fx:id="tableColumnNome" prefWidth="377.59999084472656" text="Nome" />
-            <TableColumn fx:id="tableColumnEDIT" prefWidth="64.0" />
-            <TableColumn fx:id="tableColumnREMOVE" prefWidth="83.199951171875" />
+            <TableColumn fx:id="tableColumnId" prefWidth="49.59994584321976" text="Id" />
+          <TableColumn fx:id="tableColumnNome" prefWidth="114.40009307861328" text="Nome" />
+            <TableColumn fx:id="tableColumnEmail" prefWidth="121.60003662109375" text="Email" />
+            <TableColumn fx:id="tableColumnDataAniversario" prefWidth="133.5999755859375" text="Data de Aniversário" />
+            <TableColumn fx:id="tableColumnSalarioBase" prefWidth="116.79995727539062" text="Salário Base" />
+            <TableColumn fx:id="tableColumnEDIT" prefWidth="84.0" />
+            <TableColumn fx:id="tableColumnREMOVE" prefWidth="79.2000732421875" />
         </columns>
       </TableView>
    </children>
