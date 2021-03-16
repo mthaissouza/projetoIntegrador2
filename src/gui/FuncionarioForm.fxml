@@ -22,12 +22,12 @@
             <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/555.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="605.0" fitWidth="845.0" layoutY="-77.0" opacity="0.12" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-78.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.66668701171875" AnchorPane.topAnchor="-77.0">
+      <ImageView fitHeight="650.0" fitWidth="900.0" layoutY="-77.0" opacity="0.12" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-78.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.66668701171875" AnchorPane.topAnchor="-77.0">
          <image>
             <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/0_12788d_631109ee_L.gif" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="183.0" layoutY="30.0" prefHeight="394.0" prefWidth="426.0" style="-fx-background-color: #202020; -fx-background-radius: 40;">
+      <AnchorPane layoutX="160.0" layoutY="30.0" prefHeight="394.0" prefWidth="466.0" style="-fx-background-color: #202020; -fx-background-radius: 40;">
          <children>
             <GridPane layoutX="7.0" layoutY="14.0" prefHeight="270.0" prefWidth="426.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <columnConstraints>
@@ -47,8 +47,16 @@
                </rowConstraints>
                <children>
                   <TextField fx:id="txtId" editable="false" prefWidth="219.0" promptText="ID" style="-fx-background-radius: 90;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="txtNome" promptText="Nome" style="-fx-background-radius: 90;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtEmail" promptText="E-mail" style="-fx-background-radius: 90;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <DatePicker fx:id="dpDataAniversario" prefHeight="26.0" prefWidth="282.0" promptText="Data de Nascimento" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <TextField fx:id="txtSalarioBase" prefHeight="25.0" prefWidth="220.0" promptText="Salario Base" style="-fx-background-radius: 90;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <Label prefHeight="31.0" prefWidth="228.0" text="Cadastrar Funcionário" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <ComboBox fx:id="comboBoxCliente" prefHeight="26.0" prefWidth="282.0" promptText="Cliente" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label fx:id="labelErrorNome" textFill="#ff008c" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label fx:id="labelErrorEmail" textFill="#ff008c" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label fx:id="labelErrorDataAniversario" textFill="#ff008c" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Label fx:id="labelErrorSalarioBase" textFill="#ff1395" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <Label prefHeight="31.0" prefWidth="222.0" text="Cadastrar Funcionário" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
@@ -64,20 +72,12 @@
                         <Insets />
                      </opaqueInsets>
                   </AnchorPane>
-                  <TextField fx:id="txtEmail" promptText="E-mail" style="-fx-background-radius: 90;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextField fx:id="txtNome" promptText="Nome" style="-fx-background-radius: 90;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <DatePicker fx:id="dpDataAniversario" prefHeight="26.0" prefWidth="282.0" promptText="Data de Nascimento" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <Label fx:id="labelErrorNome" textFill="#ff008c" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <Label fx:id="labelErrorEmail" textFill="#ff008c" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <Label fx:id="labelErrorDataAniversario" textFill="#ff008c" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <Label fx:id="labelErrorSalarioBase" textFill="#ff008c" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                  <ComboBox fx:id="comboBoxCliente" prefHeight="26.0" prefWidth="264.0" promptText="Cliente" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                </children>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </GridPane>
-            <HBox layoutX="62.0" layoutY="311.0" prefHeight="31.0" prefWidth="282.0" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="82.0">
+            <HBox layoutX="100.0" layoutY="311.0" prefHeight="31.0" prefWidth="233.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="133.0">
                <children>
                   <Button fx:id="btSalvar" mnemonicParsing="false" onAction="#onBtSalvarAction" prefHeight="30.0" prefWidth="130.0" style="-fx-background-radius: 90; -fx-background-color: #ff0083;" text="Salvar" textAlignment="CENTER" textFill="WHITE">
                      <font>

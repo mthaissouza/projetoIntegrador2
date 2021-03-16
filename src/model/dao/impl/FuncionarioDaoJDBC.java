@@ -31,7 +31,7 @@ public class FuncionarioDaoJDBC implements FuncionarioDao {
 		try {
 			st = conn.prepareStatement(
 					"INSERT INTO funcionario "
-					+ "(Nome, Email, DataAniversaio, SalarioBase, ClienteId) "
+					+ "(Nome, Email, DataAniversario, SalarioBase, ClienteId) "
 					+ "VALUES "
 					+ "(?, ?, ?, ?, ?)",
 					Statement.RETURN_GENERATED_KEYS);

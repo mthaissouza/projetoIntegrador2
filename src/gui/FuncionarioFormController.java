@@ -1,9 +1,11 @@
 package gui;
 
 import java.net.URL;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -139,9 +141,29 @@ public class FuncionarioFormController implements Initializable{
 		
 		//verifica se o campo nome é nulo
 		if(txtNome.getText() == null || txtNome.getText().trim().equals("")) {
-			exception.addError("nome", "O campo não pode ser vazio!");
+			exception.addError("nome", "Campo vazio!");
 		}
 		obj.setNome(txtNome.getText());
+		
+		if(txtEmail.getText() == null || txtEmail.getText().trim().equals("")) {
+			exception.addError("email", "Campo vazio!");
+		}
+		obj.setEmail(txtEmail.getText());
+		
+		if(dpDataAniversario.getValue() == null) {
+			exception.addError("dataAniversario", "Campo vazio!");
+		}
+		else {
+			Instant instant = Instant.from(dpDataAniversario.getValue().atStartOfDay(ZoneId.systemDefault()));
+			obj.setDataAniversario(Date.from(instant));
+		}
+		
+		if(txtSalarioBase.getText() == null || txtSalarioBase.getText().trim().equals("")) {
+			exception.addError("salarioBase", "Campo vazio!");
+		}
+		obj.setSalarioBase(Utils.tryParseToDouble(txtSalarioBase.getText()));
+		
+		obj.setCliente(comboBoxCliente.getValue());
 		
 		//verifica se tem algum erro na coleção
 		if(exception.getErrors().size() > 0) {
@@ -203,12 +225,15 @@ public class FuncionarioFormController implements Initializable{
 		comboBoxCliente.setItems(obsList);
 	}
 
+	//Testa cada um dos possíves erros e seta no label
 	private void setErrorMessages(Map<String, String> errors) {
 		Set<String> fields = errors.keySet();
 		
-		if(fields.contains("nome")) {
-			labelErrorNome.setText(errors.get("nome"));
-		}
+		labelErrorNome.setText((fields.contains("nome") ? errors.get("nome") : ""));
+		labelErrorEmail.setText((fields.contains("email") ? errors.get("email") : ""));
+		labelErrorDataAniversario.setText((fields.contains("dataAniversario") ? errors.get("dataAniversario") : ""));
+		labelErrorSalarioBase.setText((fields.contains("salarioBase") ? errors.get("salarioBase") : ""));
+		
 	}
 	
 	private void initializeComboBoxCliente() {
