@@ -31,6 +31,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.entities.Funcionario;
+import model.services.ClienteService;
 import model.services.FuncionarioService;
 
 public class FuncionarioListController implements Initializable, DataChangeListener{
@@ -126,7 +127,8 @@ public class FuncionarioListController implements Initializable, DataChangeListe
 			//injeção de dependências
 			FuncionarioFormController controller = loader.getController();
 			controller.setFuncionario(obj);
-			controller.setFuncionarioService(new FuncionarioService());
+			controller.setServices(new FuncionarioService(), new ClienteService());
+			controller.loadAssociatedObjects();
 			
 			controller.subscribeDataChangeListener(this);
 			
@@ -142,6 +144,7 @@ public class FuncionarioListController implements Initializable, DataChangeListe
 			
 		}
 		catch(IOException e) {
+			e.printStackTrace();
 			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
 		}
 	}
