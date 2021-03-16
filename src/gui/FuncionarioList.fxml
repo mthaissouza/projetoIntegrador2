@@ -6,34 +6,59 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="426.0" prefWidth="706.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FuncionarioListController">
+<VBox prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #0000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FuncionarioListController">
    <children>
-      <Label prefHeight="26.0" prefWidth="184.0" text="Registrar Novos Funcionarios">
+      <Label prefHeight="26.0" prefWidth="1600.0" style="-fx-background-color: #000000;" text="Registrar Novos Funcionários" textFill="WHITE">
          <font>
-            <Font name="Times New Roman" size="14.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
-         <padding>
-            <Insets left="5.0" top="5.0" />
-         </padding>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
       </Label>
-      <ToolBar prefHeight="40.0" prefWidth="200.0">
-        <items>
-          <Button fx:id="btRegistrar" mnemonicParsing="false" onAction="#onBtNewAction" text="Novo" />
-        </items>
+      <ToolBar prefHeight="41.0" prefWidth="574.0" style="-fx-background-color: #000000;">
+         <items>
+            <Button fx:id="btRegistrar" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onBtNewAction" prefHeight="30.0" prefWidth="88.0" style="-fx-background-color: #ff0083; -fx-background-radius: 90;" text="Novo" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+         </items>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
       </ToolBar>
-      <TableView fx:id="tableViewFuncionario" prefHeight="294.0" prefWidth="582.0">
-        <columns>
-            <TableColumn fx:id="tableColumnId" prefWidth="49.59994584321976" text="Id" />
-          <TableColumn fx:id="tableColumnNome" prefWidth="114.40009307861328" text="Nome" />
-            <TableColumn fx:id="tableColumnEmail" prefWidth="121.60003662109375" text="Email" />
-            <TableColumn fx:id="tableColumnDataAniversario" prefWidth="133.5999755859375" text="Data de Aniversário" />
-            <TableColumn fx:id="tableColumnSalarioBase" prefWidth="116.79995727539062" text="Salário Base" />
-            <TableColumn fx:id="tableColumnEDIT" prefWidth="84.0" />
-            <TableColumn fx:id="tableColumnREMOVE" prefWidth="79.2000732421875" />
-        </columns>
+      <TableView fx:id="tableViewFuncionario" prefHeight="506.0" prefWidth="912.0">
+         <columns>
+            <TableColumn fx:id="tableColumnId" editable="false" prefWidth="61.600006103515625" text="ID" />
+            <TableColumn fx:id="tableColumnNome" editable="false" prefWidth="169.60000610351562" text="Nome" />
+            <TableColumn fx:id="tableColumnEmail" editable="false" prefWidth="172.79998779296875" text="E-mail" />
+            <TableColumn fx:id="tableColumnDataAniversario" editable="false" prefWidth="126.4000244140625" text="Data De Aniversário" />
+            <TableColumn fx:id="tableColumnSalarioBase" editable="false" prefWidth="132.0" text="Salário Base" />
+            <TableColumn fx:id="tableColumnEDIT" prefWidth="70.39990234375" />
+            <TableColumn fx:id="tableColumnREMOVE" prefWidth="66.39990234375" />
+         </columns>
       </TableView>
+      <AnchorPane prefHeight="120.0" prefWidth="912.0" style="-fx-background-color: #000000;">
+         <children>
+            <ImageView fitHeight="91.0" fitWidth="94.0" layoutX="653.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <image>
+                  <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/logo-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </VBox>

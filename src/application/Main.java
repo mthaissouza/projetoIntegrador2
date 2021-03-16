@@ -23,7 +23,7 @@ public class Main extends Application {
 			
 			mainScene = new Scene(scrollPane);
 			primaryStage.setScene(mainScene);
-			primaryStage.setTitle("Livraria Online");
+			primaryStage.setTitle("Book Store");
 			primaryStage.show();
 			
 		} catch(Exception e) {
