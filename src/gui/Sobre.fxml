@@ -1,60 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-<?import javafx.scene.text.TextFlow?>
 
-<VBox prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="43.0" prefWidth="503.0" style="-fx-background-color: #0000000;">
+      <AnchorPane prefHeight="3.0" prefWidth="900.0" style="-fx-background-color: #ff0083;" />
+      <AnchorPane prefHeight="62.0" prefWidth="1650.0" style="-fx-background-color: #000000;">
          <children>
-            <AnchorPane layoutY="29.0" prefHeight="5.0" prefWidth="395.0" style="-fx-background-color: #ff0083;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="505.0" />
-            <Label layoutX="396.0" layoutY="7.0" prefHeight="55.0" prefWidth="108.0" text="Sobre" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="396.0" AnchorPane.rightAnchor="396.0">
+            <Label layoutX="385.0" prefHeight="51.0" prefWidth="1550.0" text="Sobre" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="385.0" AnchorPane.rightAnchor="384.0">
                <font>
                   <Font name="System Bold" size="38.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="505.0" layoutY="29.0" prefHeight="5.0" prefWidth="395.0" style="-fx-background-color: #ff0083;" AnchorPane.leftAnchor="505.0" AnchorPane.rightAnchor="0.0" />
          </children>
       </AnchorPane>
-      <ToolBar prefHeight="13.0" prefWidth="800.0" style="-fx-background-color: #000000;" />
-      <TextFlow prefHeight="256.0" prefWidth="800.0">
+      <AnchorPane prefHeight="3.0" prefWidth="900.0" style="-fx-background-color: #ff0083;" />
+      <AnchorPane prefHeight="376.0" prefWidth="900.0" style="-fx-background-color: #000000;">
          <children>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="A empresa foi criada em 2020 em meio a uma pandemia mundial. Nosso intuito é desenvolver um sistema de gerenciamento de uma livraria, que seja de fácil utilização.                                                          Nosso time é formado por 3 mulheres empreendedoras.                          Em nosso sistema Você encontra várias funcionalidades, você poderá adicionar o cliente e o funcionário, olhar a lista de cadastrados e suas informações.                                                                                                                                 Tudo é feito com muito amor e dedicação! " wrappingWidth="803.4375">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Text>
+            <ImageView fitHeight="262.0" fitWidth="717.0" layoutX="126.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/WhatsApp%20Image%202021-03-17%20at%2015.58.51.jpeg" />
+               </image>
+               <effect>
+                  <Blend mode="MULTIPLY" />
+               </effect>
+            </ImageView>
          </children>
-         <VBox.margin>
-            <Insets bottom="60.0" left="50.0" right="50.0" top="60.0" />
-         </VBox.margin>
-      </TextFlow>
-      <AnchorPane prefHeight="216.0" prefWidth="900.0">
+      </AnchorPane>
+      <AnchorPane prefHeight="400.0" prefWidth="900.0" style="-fx-background-color: #000000;">
          <children>
-            <ImageView fitHeight="98.0" fitWidth="122.0" layoutX="692.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="1.0" AnchorPane.rightAnchor="0.0">
+            <ImageView fitHeight="98.0" fitWidth="91.0" layoutX="795.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <image>
                   <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/logo-removebg-preview.png" />
                </image>
-               <effect>
-                  <DropShadow color="#af0049" />
-               </effect>
             </ImageView>
-            <ImageView fitHeight="238.0" fitWidth="284.0" layoutX="308.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.774993896484375" AnchorPane.topAnchor="1.0">
+            <ImageView fitHeight="117.0" fitWidth="213.0" layoutX="338.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/livros5.gif" />
                </image>
-               <effect>
-                  <DropShadow color="RED" />
-               </effect>
             </ImageView>
          </children>
       </AnchorPane>
