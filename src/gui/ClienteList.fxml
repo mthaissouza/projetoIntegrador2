@@ -5,18 +5,26 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ClienteListController">
+<VBox prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ClienteListController">
    <children>
       <Label prefHeight="26.0" prefWidth="1600.0" style="-fx-background-color: #000000;" text="Registrar Novos Clientes" textAlignment="JUSTIFY" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/unnamed.gif" />
+               </image>
+            </ImageView>
+         </graphic>
       </Label>
       <ToolBar prefHeight="13.0" prefWidth="800.0" style="-fx-background-color: #000000;">
          <items>
@@ -25,9 +33,14 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
+            <ImageView fitHeight="36.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/Profile-ICon.png" />
+               </image>
+            </ImageView>
          </items>
       </ToolBar>
-      <TableView fx:id="tableViewCliente" prefHeight="382.0" prefWidth="800.0">
+      <TableView fx:id="tableViewCliente" prefHeight="524.0" prefWidth="900.0">
          <columns>
             <TableColumn fx:id="tableColumnId" editable="false" prefWidth="84.79998779296875" text="ID" />
             <TableColumn fx:id="tableColumnNome" editable="false" prefWidth="554.4000244140625" text="Nome" />
@@ -41,6 +54,9 @@
                <image>
                   <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/logo-removebg-preview.png" />
                </image>
+               <effect>
+                  <DropShadow color="#ff004b" />
+               </effect>
             </ImageView>
          </children>
       </AnchorPane>

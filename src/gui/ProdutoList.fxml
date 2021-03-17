@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ProdutoListController">
+   <children>
+      <Label prefHeight="30.0" prefWidth="1550.0" style="-fx-background-color: #000000;" text="Registrar Novos Produtos" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/unnamed.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="38.0" prefWidth="900.0" style="-fx-background-color: #000000;">
+         <items>
+            <Button fx:id="btRegistrar" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#onBtNewAction" prefHeight="30.0" prefWidth="101.0" style="-fx-background-color: #ff0083; -fx-background-radius: 90;" text="Novo" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+         </items>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </ToolBar>
+      <TableView fx:id="tableViewProduto" prefHeight="446.0" prefWidth="900.0">
+         <columns>
+            <TableColumn fx:id="tableColumnId" editable="false" prefWidth="67.0" text="ID" />
+            <TableColumn fx:id="tableColumnNome" editable="false" prefWidth="407.19991302490234" text="Nome" />
+            <TableColumn fx:id="tableColumnPreco" editable="false" prefWidth="108.00003051757812" text="Preço" />
+            <TableColumn fx:id="tableColumnQuantidade" editable="false" prefWidth="166.400146484375" text="Quantidade em Estoque" />
+            <TableColumn fx:id="tableColumnEDIT" editable="false" prefWidth="72.7999267578125" />
+            <TableColumn fx:id="tableColumnREMOVE" editable="false" prefWidth="72.0" />
+         </columns>
+      </TableView>
+      <AnchorPane prefHeight="104.0" prefWidth="900.0" style="-fx-background-color: #000000;">
+         <children>
+            <ImageView fitHeight="134.0" fitWidth="136.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/Shopping-Carts-90318.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="91.0" fitWidth="94.0" layoutX="653.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <image>
+                  <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/logo-removebg-preview.png" />
+               </image>
+               <effect>
+                  <DropShadow color="#8a0836" />
+               </effect>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

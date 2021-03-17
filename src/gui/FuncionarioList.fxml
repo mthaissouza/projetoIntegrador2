@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,16 +15,17 @@
 
 <VBox prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #0000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FuncionarioListController">
    <children>
-      <Label prefHeight="26.0" prefWidth="1600.0" style="-fx-background-color: #000000;" text="Registrar Novos Funcionários" textFill="WHITE">
+      <Label prefHeight="30.0" prefWidth="1600.0" style="-fx-background-color: #000000;" text="Registrar Novos Funcionários" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/unnamed.gif" />
+               </image>
+            </ImageView>
+         </graphic>
       </Label>
       <ToolBar prefHeight="41.0" prefWidth="574.0" style="-fx-background-color: #000000;">
          <items>
@@ -35,12 +37,17 @@
                   <Insets />
                </opaqueInsets>
             </Button>
+            <ImageView fitHeight="41.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/Profile-ICon.png" />
+               </image>
+            </ImageView>
          </items>
          <VBox.margin>
             <Insets />
          </VBox.margin>
       </ToolBar>
-      <TableView fx:id="tableViewFuncionario" prefHeight="506.0" prefWidth="912.0">
+      <TableView fx:id="tableViewFuncionario" prefHeight="527.0" prefWidth="900.0">
          <columns>
             <TableColumn fx:id="tableColumnId" editable="false" prefWidth="61.600006103515625" text="ID" />
             <TableColumn fx:id="tableColumnNome" editable="false" prefWidth="169.60000610351562" text="Nome" />
@@ -51,12 +58,15 @@
             <TableColumn fx:id="tableColumnREMOVE" prefWidth="66.39990234375" />
          </columns>
       </TableView>
-      <AnchorPane prefHeight="120.0" prefWidth="912.0" style="-fx-background-color: #000000;">
+      <AnchorPane prefHeight="126.0" prefWidth="900.0" style="-fx-background-color: #000000;">
          <children>
             <ImageView fitHeight="91.0" fitWidth="94.0" layoutX="653.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <image>
                   <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/logo-removebg-preview.png" />
                </image>
+               <effect>
+                  <DropShadow color="#fd3776" />
+               </effect>
             </ImageView>
          </children>
       </AnchorPane>

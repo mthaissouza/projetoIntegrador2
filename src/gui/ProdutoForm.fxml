@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ProdutoFormController">
+   <children>
+      <ImageView fitHeight="450.0" fitWidth="800.0" layoutX="221.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/555.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="605.0" fitWidth="845.0" layoutY="-77.0" opacity="0.12" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-78.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.66668701171875" AnchorPane.topAnchor="-77.0">
+         <image>
+            <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/0_12788d_631109ee_L.gif" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="219.0" layoutY="69.0" prefHeight="339.0" prefWidth="407.0" style="-fx-background-color: #202020; -fx-background-radius: 40;">
+         <children>
+            <GridPane layoutX="7.0" layoutY="14.0" prefHeight="232.0" prefWidth="314.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="220.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="43.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="73.0" minHeight="10.0" prefHeight="34.40000610351562" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="43.79999389648438" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="41.40000610351561" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="36.79998168945312" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="14.399987792968744" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Cadastrar Produto" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="12.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <AnchorPane prefHeight="9.0" prefWidth="219.0" style="-fx-background-color: #ff0083;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="25.0" />
+                     </GridPane.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </AnchorPane>
+                  <TextField fx:id="txtId" editable="false" prefHeight="25.0" prefWidth="231.0" promptText="ID" style="-fx-background-radius: 90;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="txtNome" promptText="Nome" style="-fx-background-radius: 90;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtPreco" promptText="Preço" style="-fx-background-radius: 90;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="txtQuantidade" prefHeight="25.0" prefWidth="224.0" promptText="Quantidade" style="-fx-background-radius: 90;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label fx:id="labelErrorNome" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label fx:id="labelErrorPreco" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label fx:id="labelErrorQuantidade" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </GridPane>
+            <HBox layoutX="79.0" layoutY="260.0" prefHeight="31.0" prefWidth="231.0" AnchorPane.leftAnchor="79.0" AnchorPane.rightAnchor="97.0">
+               <children>
+                  <Button fx:id="btSalvar" mnemonicParsing="false" onAction="#onBtSalvarAction" prefHeight="25.0" prefWidth="171.0" style="-fx-background-radius: 90; -fx-background-color: #ff0083;" text="Salvar" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btCancelar" mnemonicParsing="false" onAction="#onBtCancelarAction" prefHeight="25.0" prefWidth="171.0" style="-fx-background-radius: 90; -fx-background-color: #ff0083;" text="Cancelar" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="96.0" fitWidth="114.0" layoutX="661.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <image>
+            <Image url="@../../../../../Downloads/NOVAS%20TELAS(1)/Imagens/logo-removebg-preview.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

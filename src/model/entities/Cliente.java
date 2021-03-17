@@ -70,13 +70,5 @@ public class Cliente implements Serializable{
 		return true;
 	}
 
-	/*public void alterarDados(String nome, String email, String senha) {
-		this.email = email;
-		this.nome = nome;
-	}
-	
-	public void excluirConta() {
-		
-	}*/
 }
 

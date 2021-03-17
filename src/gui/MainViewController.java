@@ -18,6 +18,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 import model.services.ClienteService;
 import model.services.FuncionarioService;
+import model.services.ProdutoService;
 
 public class MainViewController implements Initializable{
 	//Atributos para os itens de menu
@@ -28,10 +29,7 @@ public class MainViewController implements Initializable{
 	private MenuItem menuItemFuncionario;
 	
 	@FXML
-	private MenuItem menuItemLivraria;
-	
-	@FXML
-	private MenuItem menuItemLogin;
+	private MenuItem menuItemProdutos;
 	
 	@FXML
 	private MenuItem menuItemSobre;
@@ -54,13 +52,11 @@ public class MainViewController implements Initializable{
 	}
 	
 	@FXML
-	public void onMenuItemLivrariaAction() {
-		System.out.println("onMenuItemLivrariaAction");
-	}
-	
-	@FXML
-	public void onMenuItemLoginAction() {
-		System.out.println("onMenuItemLoginAction");
+	public void onMenuItemProdutosAction() {
+		loadView("/gui/ProdutoList.fxml", (ProdutoListController controller) -> {
+			controller.setProdutoService(new ProdutoService());
+			controller.updateTableView();
+		});
 	}
 	
 	@FXML
